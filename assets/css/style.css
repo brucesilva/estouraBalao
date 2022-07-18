@@ -1,0 +1,61 @@
+body{
+    background-color: blueviolet;
+}
+
+html{
+    cursor: url(../img/raquete.png) 10 10, auto;
+}
+ 
+.painelJogo{
+    position: absolute;
+    width: 190px;
+    padding: 10px;
+    bottom: 0px;
+    left: 0px;
+    border-top: 1px #fff;
+    background-color: #fff;
+    opacity: 0.5;
+
+}
+
+ 
+/* 
+.vidas{
+    width:200px; 
+    border:3px solid red; 
+    height:100px;
+    position: absolute;
+    left: 0px; 
+    bottom: 0px;
+     float: left; 
+} */
+
+.cronometro{
+    /* float: left; */
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* .coracao{
+    margin-top: 10px;
+    margin-left: 10px;
+} */
+
+/* tamanho dos balões aleatorios */
+.ballon1{
+    width: 30px;
+    height: 30px; 
+} 
+
+.ballon2{
+    width: 50px;
+    height: 50px;
+} 
+
+.ballon3{
+    width: 70px;
+    height: 70px;
+} 
+/* ************* */
+
+ 
