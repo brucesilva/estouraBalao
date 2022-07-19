@@ -2,11 +2,9 @@ body{
     background-color: blueviolet;
     background-image: url('../img/bgGame3.jpg');
     background-repeat: no-repeat; 
-<<<<<<< HEAD
     background-size: cover; 
-=======
     background-size: cover;
->>>>>>> e5a60dcddc3400e4703e529f75249b2741b366f3
+
 }
  
 /* aqui trocou o ponteiro do mouse para uma imagem */
