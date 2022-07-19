@@ -2,9 +2,7 @@ body{
     background-color: blueviolet;
     background-image: url('../img/bgGame3.jpg');
     background-repeat: no-repeat; 
-    background-size: cover;
-    
-    
+    background-size: cover; 
 }
  
 /* aqui trocou o ponteiro do mouse para uma imagem */
@@ -23,7 +21,10 @@ body{
     opacity: 0.5;
 
 }
-
+.contBalloon{
+    font-weight: bold;
+    color: red;
+}
  
 /* 
 .vidas{

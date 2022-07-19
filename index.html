@@ -5,27 +5,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 
-    <title>Jogo Estoura balão</title>
+    <link rel="stylesheet" href="assets/css/pageInitial.css">
+
+    <title>Game - Estoura Balões</title>
 </head>
-<!-- esse onresize é para definir o tamanho da página, para pegarmos a proporção da tela quando alterada -->
-<body onresize="ajustaTamanhoPalcoJogo()"> 
- 
+<body>
+    
+    <div class="container" > 
+        <img src="assets/img/greenBallon.png" alt="" width="80px" height="110px" style="margin-top:12px">
+        <img src="assets/img/balao2.png" alt="" width="80px" height="90px">
 
-<div class="painelJogo"> 
-    <div class="vidas">
-        <img  id="v1" src="assets/img/coracao_cheio.png" />
-        <img  id="v2" src="assets/img/coracao_cheio.png" />
-        <img  id="v3" src="assets/img/coracao_cheio.png" />
+        <div class="row"> 
+            <div class="col-md-12"> 
+                <select class="select" name="nivel" id="nivel">
+                    <option value="0">--> Escolha um nível <-- </option>
+                    <option value="1">Normal </option>
+                    <option value="2">Médio </option>
+                    <option value="3">Hard </option>
+                </select>
+            </div> 
+            <div class="col-md-12">
+                <div class="btn btn-danger" onclick="startGame()">Iniciar Jogo</div>
+            </div>
+        </div> 
+        <img src="assets/img/yellowBalloon.png" alt="" width="60px" height="100px">
+        <img src="assets/img/balloonBlue.png" alt="" width="120px" height="133px" style="margin-top:30px ;">
     </div>
+    
 
-    <div class="cronometro"> 
-        Tempo Restante: <span id="relogio"> ?</span>
-    </div>
- 
-</div><!-- fecha painelJogo -->
 
-<script src="assets/js/jogo.js"></script>
+    <script>
+
+         function startGame(){
+            let nivel = document.getElementById('nivel').value
+            if(nivel == 0){
+                alert("Favor escolher um nível para iniciar o jogo");
+            }else{
+                window.location.href = 'game.html?'+nivel;
+            }
+
+            
+             
+         }
+
+
+    </script>
 </body>
 </html>

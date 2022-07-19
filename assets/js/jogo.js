@@ -3,7 +3,28 @@ let altura = 0;
 let largura = 0;
 let vidas = 1;
 let tempo = 10;
- 
+let contaBaloes = 0;
+let velocidade = 0
+
+// pegando o atributo ? search passado pela URL para pegar o nivel 
+let nivel = window.location.search;
+nivel = nivel.replace('?', '');
+
+if(nivel == 1){
+    tempo = 15;
+    velocidade = 1100;
+}
+if(nivel == 2){
+    tempo = 10
+    velocidade = 1000;
+}
+
+if(nivel == 3){
+    tempo = 5
+    velocidade = 800;
+}
+
+
 // essa função é para pegar o tamanho da tela
 function ajustaTamanhoPalcoJogo(){
     altura = window.innerHeight;
@@ -11,10 +32,9 @@ function ajustaTamanhoPalcoJogo(){
 }
 // estou chamado a função, para atualizar a altura e largura da tela
 ajustaTamanhoPalcoJogo();
- 
 
-// console.log(posicaoX); 
-// criar posição randomica na tela para add o balão
+
+ 
 function positionRandom(){ 
     // verificando se o mosquito existe, se existe remove
     if(document.getElementById('ballon')){
@@ -43,13 +63,15 @@ let posicaoY = Math.floor(Math.random() * altura) -100 ;
 posicaoX = posicaoX < 0 ? 0 : posicaoX;
 posicaoY = posicaoY < 0 ? 0 : posicaoY;  
 
-console.log(posicaoX); 
-console.log(posicaoY); 
 
 // criar elementos no html
 let balloon = document.createElement('img'); 
-balloon.src = randomBalloon(); 
-// console.log(caminhoImg);
+balloon.src = randomBalloon();  //aqui é que faz os balões aparecerem na tela
+// if(initionGame === true){
+//     balloon.src = randomBalloon();
+// }
+
+
 balloon.id = 'ballon';
 balloon.className = heightRandom();
 
@@ -62,21 +84,26 @@ balloon.style.display = 'flex';
 
  // aqui é para qdo clicar no mosquito remover
  balloon.onclick = function(){
-    console.log(this.remove());
+        this.remove();
+        // aqui incremento a variavel do contador dos balões
+        contaBaloes += 1;
+        document.getElementById('balloonEstourados').innerHTML = contaBaloes;
+        // console.log("baloes estourados " +contaBaloes);
   }
 
 // aqui estou colocando ele para aparecer na página
 document.body.appendChild(balloon); 
  
 }
-
-// função para gerar o mosquito aleatorio na tela
-// positionRandom(); 
-let createBallon = setInterval(function(){
-    positionRandom()
-}, 1110);
-
  
+ 
+// função para gerar o balão aleatorio na tela
+// positionRandom(); 
+    let createBallon = setInterval(function(){
+            positionRandom()
+    }, velocidade);
+
+    
 // aqui estou fazendo o tempo do cronometro dos balões
 let cronometro = setInterval(function(){ 
 
@@ -93,15 +120,12 @@ let cronometro = setInterval(function(){
     tempo -= 1;
 }, 1000);
 
-
- 
-
  
 // gerando tamanho aleatorio do balão
 function heightRandom(){
     // aqui vou gerar 1 número de 0 a 3
     let classe = Math.floor(Math.random() * 3); 
-    console.log("O valor da classe é " +classe);
+    // console.log("O valor da classe é " +classe);
 
     // vou pegar esse número, e de acordo com o valor eu vou atribuir uma classe pra ele
     switch(classe){
@@ -117,7 +141,7 @@ function heightRandom(){
 
 }
  
-// gerando balões de cores aleatorias
+
 function randomBalloon(){
     // aqui vou gerar 1 número de 0 a 3
     let imgBallon = Math.floor(Math.random() * 3); 
@@ -137,3 +161,8 @@ function randomBalloon(){
 
 }
 
+
+
+
+
+ 
