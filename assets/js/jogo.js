@@ -2,7 +2,7 @@
 let altura = 0;
 let largura = 0;
 let vidas = 1;
-let tempo = 30;
+let tempo = 10;
  
 // essa função é para pegar o tamanho da tela
 function ajustaTamanhoPalcoJogo(){
