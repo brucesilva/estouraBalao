@@ -2,7 +2,7 @@
 let altura = 0;
 let largura = 0;
 let vidas = 1;
-let tempo = 8;
+let tempo = 30;
  
 // essa função é para pegar o tamanho da tela
 function ajustaTamanhoPalcoJogo(){
@@ -28,7 +28,7 @@ function positionRandom(){
             // função para parar o relogio
             clearInterval(createBallon);
             alert("Game Over");
-            // window.location.href = 'gameOver.html';
+            window.location.href = 'gameOver.html';
         }else{
             document.getElementById('v' + vidas).src='assets/img/coracao_vazio.png';
         }  
@@ -84,8 +84,8 @@ let cronometro = setInterval(function(){
     if(tempo <0){
         clearInterval(cronometro);
         clearInterval(createBallon);
-        alert("Parabéns você ganhou");
-        // window.location.href = 'winner.html';
+        alert("Congratulation you Winner");
+        window.location.href = 'winner.html';
         
     }else{
         document.getElementById('relogio').innerHTML = tempo ;
@@ -132,7 +132,7 @@ function randomBalloon(){
             return 'assets/img/balao2.png';
 
         case 2: 
-            return 'assets/img/balao1.png';
+            return 'assets/img/yellowBalloon.png';
     }
 
 }
